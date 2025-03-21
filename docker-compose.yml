@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  openmanus:
+    build: .
+    image: openmanus:latest
+    container_name: openmanus
+    environment:
+      - DISPLAY=host.docker.internal:0
+    volumes:
+      - ./config/config.toml:/app/OpenManus/config/config.toml  # Mount your local config file into the container
+      - ./workspace:/app/OpenManus/workspace  # Mount your local workspace directory into the container
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # Optionally mount the entire project directory for live updates:
+      # - ./:/app
+    stdin_open: true    # Keeps STDIN open for interactive input
+    tty: true           # Allocates a pseudo-TTY for the container
+#    command: python main.py  # Override this if you want to run a different entry point

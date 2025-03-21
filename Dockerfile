@@ -10,4 +10,7 @@ COPY . .
 
 RUN uv pip install --system -r requirements.txt
 
+RUN playwright install
+RUN playwright install-deps
+
 CMD ["bash"]
