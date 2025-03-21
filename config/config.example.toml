@@ -1,9 +1,9 @@
 # Global LLM configuration
 [llm]
-model = "claude-3-7-sonnet-20250219"        # The LLM model to use
-base_url = "https://api.anthropic.com/v1/"  # API endpoint URL
+model = "openai/gpt-4o-mini"       # The LLM model to use
+base_url = "https://openrouter.ai/api/v1"  # API endpoint URL
 api_key = "YOUR_API_KEY"                    # Your API key
-max_tokens = 8192                           # Maximum number of tokens in the response
+max_tokens = 4096                           # Maximum number of tokens in the response
 temperature = 0.0                           # Controls randomness
 
 # [llm] # Amazon Bedrock
